@@ -85,6 +85,7 @@ as songs in multiple languages.
 #- source
 %doc %{_texmfdistdir}/source/latex/songbook/songbook.dtx
 %doc %{_texmfdistdir}/source/latex/songbook/songbook.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -95,3 +96,5 @@ as songs in multiple languages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar makeindex tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
