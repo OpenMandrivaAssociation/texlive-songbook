@@ -6,7 +6,7 @@
 # catalog-version 4.5
 Name:		texlive-songbook
 Version:	4.5
-Release:	1
+Release:	2
 Summary:	Package for typesetting song lyrics and chord books
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/songbook
