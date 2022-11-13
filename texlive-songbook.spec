@@ -1,19 +1,13 @@
-# revision 18136
-# category Package
-# catalog-ctan /macros/latex/contrib/songbook
-# catalog-date 2010-05-06 13:38:32 +0200
-# catalog-license lgpl2.1
-# catalog-version 4.5
 Name:		texlive-songbook
-Version:	4.5
-Release:	11
+Version:	18136
+Release:	1
 Summary:	Package for typesetting song lyrics and chord books
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/songbook
 License:	LGPL2.1
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -31,12 +25,12 @@ The package attempts to handle songs in multiple keys, as well
 as songs in multiple languages.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -78,24 +72,11 @@ as songs in multiple languages.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar makeindex tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 4.5-2
-+ Revision: 756073
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.5-1
-+ Revision: 719555
-- texlive-songbook
-- texlive-songbook
-- texlive-songbook
-- texlive-songbook
-
