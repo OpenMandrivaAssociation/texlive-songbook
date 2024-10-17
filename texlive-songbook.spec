@@ -3,7 +3,7 @@ Version:	18136
 Release:	2
 Summary:	Package for typesetting song lyrics and chord books
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/songbook
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/songbook
 License:	LGPL2.1
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/songbook.doc.r%{version}.tar.xz
